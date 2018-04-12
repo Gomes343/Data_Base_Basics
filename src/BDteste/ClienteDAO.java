@@ -4,7 +4,13 @@ import conexao.Conexao;
 
 public class ClienteDAO {
 
-    private Conexao conexao = new Conexao();
+    private Conexao conexao;
+    
+    public ClienteDAO(){
+        conexao = new Conexao();
+        conexao.configurar();
+    }
+    
     
     public boolean inserir(String nome, String cpf){
         
