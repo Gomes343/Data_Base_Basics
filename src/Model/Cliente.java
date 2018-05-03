@@ -1,4 +1,6 @@
-package BDteste;
+package Model;
+
+import DAO.ClienteDAO;
 
 public class Cliente {
 
@@ -9,8 +11,26 @@ public class Cliente {
     private ClienteDAO dao = new ClienteDAO();// mesmo ele ja inicializado aqui
     //ele ainda nao existe na memoria, ai construtor já cria ele!
 
-    public Cliente(){  //inicializando os contrutores
+    public Cliente(String nome, String cpf){  //inicializando os contrutores
         dao = new ClienteDAO();
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+    
+    public boolean verificar(){
+        if(cpf.length()!=11){
+            return false;
+        }else{
+        if(nome.length() < 5 ){
+            return false;
+        }
+        }
+        return true;
+    }
+    
+    public boolean enviar(){
+        boolean b = dao.inserir(this.getNome(),this.getCpf());
+        return b;
     }
     
     public int getId() {
@@ -36,13 +56,14 @@ public class Cliente {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+    
     public void inserir(String nome, String cpf){
         dao.inserir(nome, cpf);
     }               //metodo feio mas funfa
     
     
     public static void main(String[]args){
-        Cliente cliente = new Cliente();
+        Cliente cliente = new Cliente("Jose","12345678911");
         cliente.setNome("José");
         cliente.setCpf("12345678911");
         ClienteDAO dao = new ClienteDAO();
@@ -58,4 +79,5 @@ public class Cliente {
         
         
     }
+
 }

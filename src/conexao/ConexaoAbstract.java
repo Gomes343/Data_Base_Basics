@@ -73,7 +73,7 @@ public abstract class ConexaoAbstract implements IConexao{
     }
 
 
-    public boolean getStatus() {
+    public boolean getStatus(){
         return status;
     }
 

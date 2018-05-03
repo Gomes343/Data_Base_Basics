@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="180.0" prefWidth="252.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuInicialViewController">
+   <children>
+      <Button fx:id="buttonInsert" layoutX="67.0" layoutY="34.0" mnemonicParsing="false" onAction="#buttonIsert" prefHeight="25.0" prefWidth="123.0" text="Módulo Insert" />
+      <Button fx:id="buttonDelete" layoutX="67.0" layoutY="78.0" mnemonicParsing="false" onAction="#buttonDelete" prefHeight="25.0" prefWidth="123.0" text="Módulo Delete" />
+      <Button fx:id="buttonUpdate" layoutX="67.0" layoutY="126.0" mnemonicParsing="false" onAction="#buttonUpdate" prefHeight="25.0" prefWidth="123.0" text="Módulo Update" />
+   </children>
+</AnchorPane>

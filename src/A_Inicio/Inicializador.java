@@ -1,4 +1,4 @@
-package BDteste;
+package A_Inicio;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,18 +8,18 @@ import javafx.stage.Stage;
 
 
 
-public class TreinoBD extends Application {
+public class Inicializador extends Application {
     
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("MenuView.fxml"));
+    public void start(Stage stage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("/ViewFXML/MenuInicialView.fxml"));
         
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
         stage.show();
     }
-    
+   
     
     public static void main(String[] args) {
         launch(args);

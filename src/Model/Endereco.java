@@ -1,4 +1,4 @@
-package BDteste;
+package Model;
 
 public class Endereco {
     

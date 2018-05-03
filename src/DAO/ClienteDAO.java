@@ -1,4 +1,4 @@
-package BDteste;
+package DAO;
 
 import conexao.Conexao;
 
@@ -70,6 +70,40 @@ public class ClienteDAO {
         boolean b = conexao.executarComandosSQL(sql);
         
         //retornar erro ou ok 
+        return b;     
+            
+    }
+   
+    public boolean apagarCPF(String cpf){
+        //criar a SQL com variaveis
+        String sql = "DELETE FROM cliente WHERE cpf = "+cpf+";";
+        
+        //conectar com BD
+        conexao.conectar();
+
+        //enviar SQL para banco de dados
+        boolean b = conexao.executarComandosSQL(sql);
+        
+        //retornar erro ou ok 
+        return b;     
+            
+    }
+ 
+    public boolean Select(){
+        //criar a SQL com variaveis
+        String sql = "select * from cliente";
+        
+        //conectar com BD
+        conexao.conectar();
+
+        //enviar SQL para banco de dados
+        boolean b = conexao.executarComandosSQL(sql);
+
+        //retornar erro ou ok 
+        
+        conexao.pegarResultadoSQL(sql);
+        //02.05 professor falou que na proxima aula fariamos!
+        
         return b;     
             
     }
