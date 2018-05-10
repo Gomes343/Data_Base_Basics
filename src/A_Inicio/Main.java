@@ -20,7 +20,39 @@ public class Main {
         System.out.println(x);
         System.out.println(y);
 
+        /*
         
+        Comandos
+
+Select Nome from CD
+
+select cod as "Código" from Gravadora
+(Irá puxar a coluna Cod porém com um 'ALIAS' chamando de Código)
+
+Select * from cd, gravadora where gravadora.cod = cd.gravacod
+(Irá puxar a tabela de gravadora.cod se igualando as informações de gravacod,
+
+Select * from cd where ano = 1986 and gravacod = 2
+
+Select * from cd where ano >= 1986
+
+Select * from gravadora where nome is null
+
+Select * from cd where ano between '1986' and '1990'
+
+Select * from cd where nome like 'U2 - One'
+
+Select * from cd where nome like '%a%'
+
+Select * from gravadora where nome like 'S_'
+
+
+
+
+Select * from cd where
+(ano between '1981' and '1990') and (nome like '_ _i%') and (codigo < 3)
+        
+        */
 
         
     }    

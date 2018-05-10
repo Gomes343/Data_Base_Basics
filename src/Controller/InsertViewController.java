@@ -76,25 +76,23 @@ public class InsertViewController implements Initializable {
         }
     }
     
-    @FXML private void consultar(ActionEvent event){
+    @FXML private void consultar(ActionEvent event) throws IOException{
         
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
+        Node node = (Node) null;
+        Stage stage = (Stage)node.getScene().getWindow();
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("/ViewFXML/ConsultaView.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/ViewFXML/ConsultaView.fxml"));
         } catch (IOException ex) {
     
         }
         
         Scene scene = new Scene(root);
+        node.getScene().getWindow().hide();
         stage.setScene(scene);
         stage.show();
-        ((Node)(event.getSource())).getScene().getWindow().hide();
         
-        
-    }
-    
+    }    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
