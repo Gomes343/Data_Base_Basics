@@ -1,5 +1,6 @@
 package Controller;
 
+import DAO.ClienteDAO;
 import Model.Cliente;
 import java.io.IOException;
 import java.net.URL;
@@ -42,36 +43,38 @@ public class UpdateViewController implements Initializable {
     
     @FXML private void UpdateCPF(ActionEvent event) {
         
-        Cliente c = new Cliente(textField01.getText(),textField02.getText());
-        boolean b = c.verificar();
+        ClienteDAO dao = new ClienteDAO();
+        int i = Integer.parseInt(textField01.getText());
         
-        if(b == false){
-            label04.setText("Erro no Preenchimento!");
+        
+        if(dao.atualizarCPF(i, textField03.getText()) == false){
+            label05.setText("Erro no Preenchimento!");
             textField01.setText("");
             textField02.setText("");
         }else{
-            if(c.enviar() == true){
-            label04.setText("Cadastro Realizado com Sucesso!");                
+            if(dao.atualizarCPF(i, textField03.getText()) == true){
+            label05.setText("Cadastro Atualizado com Sucesso!");                
             }else{
-            label04.setText("Erro no momento de envio para BD");                
+            label05.setText("Erro no momento de envio para BD");                
             }
         }
     }
     
     @FXML private void UpdateNome(ActionEvent event) {
         
-        Cliente c = new Cliente(textField01.getText(),textField02.getText());
-        boolean b = c.verificar();
+        ClienteDAO dao = new ClienteDAO();
+        int i = Integer.parseInt(textField01.getText());
         
-        if(b == false){
-            label04.setText("Erro no Preenchimento!");
+        
+        if(dao.atualizarNome(i, textField02.getText()) == false){
+            label05.setText("Erro no Preenchimento!");
             textField01.setText("");
             textField02.setText("");
         }else{
-            if(c.enviar() == true){
-            label04.setText("Cadastro Realizado com Sucesso!");                
+            if(dao.atualizarNome(i, textField02.getText()) == true){
+            label05.setText("Cadastro Atualizado com Sucesso!");                
             }else{
-            label04.setText("Erro no momento de envio para BD");                
+            label05.setText("Erro no momento de envio para BD");                
             }
         }
     }

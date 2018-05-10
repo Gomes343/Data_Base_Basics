@@ -43,7 +43,7 @@ public class InsertViewController implements Initializable {
     
     
     
-    @FXML private void Voltar(ActionEvent event) throws Exception {
+    @FXML private void voltar(ActionEvent event) throws Exception {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Parent root = null;
@@ -75,6 +75,26 @@ public class InsertViewController implements Initializable {
             }
         }
     }
+    
+    @FXML private void consultar(ActionEvent event){
+        
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("/ViewFXML/ConsultaView.fxml"));
+        } catch (IOException ex) {
+    
+        }
+        
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+        
+        
+    }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

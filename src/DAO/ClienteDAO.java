@@ -1,6 +1,7 @@
 package DAO;
 
 import conexao.Conexao;
+import java.sql.ResultSet;
 
 public class ClienteDAO {
 
@@ -89,7 +90,7 @@ public class ClienteDAO {
             
     }
  
-    public boolean Select(){
+    public ResultSet Select(){
         //criar a SQL com variaveis
         String sql = "select * from cliente";
         
@@ -97,11 +98,10 @@ public class ClienteDAO {
         conexao.conectar();
 
         //enviar SQL para banco de dados
-        boolean b = conexao.executarComandosSQL(sql);
 
         //retornar erro ou ok 
         
-        conexao.pegarResultadoSQL(sql);
+        ResultSet b = conexao.pegarResultadoSQL(sql);
         //02.05 professor falou que na proxima aula fariamos!
         
         return b;     
